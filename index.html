@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liebe y Joyita - Nuestro Refugio 🖤✨</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --accent-pink: #d87093;
+      --accent-gold: #d4af37;
+      --accent-blue: #00d2d3;
+      --text-main: #f5f5f5;
+      --text-muted: #a0a0a0;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    header h1 {
+      font-weight: 300;
+      letter-spacing: 3px;
+      font-size: 1.8rem;
+      margin: 0;
+      color: var(--accent-gold);
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 450px;
+      margin-bottom: 90px;
+    }
+    .view { display: none; }
+    .active { display: block; }
+
+    /* Botones de Inicio */
+    .home-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .main-btn {
+      background: var(--card-bg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 22px;
+      border-radius: 12px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .main-btn:active {
+      transform: scale(0.97);
+      border-color: var(--accent-pink);
+    }
+
+    /* Tarjetas Elegantes */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    .card h3 {
+      font-weight: 400;
+      color: var(--accent-pink);
+      margin-top: 0;
+      letter-spacing: 1px;
+    }
+
+    /* Dedicatorias de Amor */
+    .dedication-card {
+      background: linear-gradient(145deg, #1f1b22, #141316);
+      border: 1px solid rgba(216, 112, 147, 0.35);
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .dedication-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .dedication-photo-frame {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      margin-bottom: 18px;
+      background: #000;
+    }
+
+    .dedication-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .dedication-quote-box {
+      text-align: left;
+      padding: 4px 6px;
+    }
+
+    .dedication-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #f3edf0;
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.2px;
+      position: relative;
+    }
+
+    .dedication-signature {
+      text-align: right;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent-pink);
+      letter-spacing: 0.5px;
+    }
+
+    /* PIEDRA PAPEL TIJERA: QUIEN PIERDE FRIEGA */
+    .rps-premium-card {
+      background: linear-gradient(145deg, #1e1e1e, #161616);
+      border: 1px solid rgba(216, 112, 147, 0.25);
+      position: relative;
+    }
+
+    .rps-controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+    }
+
+    .rps-voice-btn {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: var(--accent-gold);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .rps-voice-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    .rps-voice-btn.muted {
+      color: var(--text-muted);
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .rps-scoreboard {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      padding: 6px 18px;
+      margin: 0 auto 16px;
+      width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .rps-score-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rps-score-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .rps-score-val {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--accent-gold);
+    }
+
+    .rps-score-sep {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .rps-choices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .rps-option-btn {
+      background: #232323;
+      border: 2px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 15px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      user-select: none;
+    }
+
+    .rps-option-btn .rps-icon {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .rps-option-btn .rps-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .rps-option-btn:hover {
+      border-color: rgba(216, 112, 147, 0.4);
+      transform: translateY(-3px);
+      background: #282828;
+    }
+
+    .rps-option-btn.selected {
+      border-color: var(--accent-pink);
+      background: linear-gradient(145deg, #2c1b22, #1a1a1a);
+      box-shadow: 0 0 20px rgba(216, 112, 147, 0.35);
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .rps-option-btn.selected .rps-icon {
+      transform: scale(1.15);
+    }
+
+    .rps-execute-btn {
+      width: 100%;
+      margin-bottom: 15px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+      background: rgba(216, 112, 147, 0.05);
+    }
+
+    .rps-execute-btn:active {
+      background: var(--accent-pink);
+      color: white;
+    }
+
+    .rps-battle-arena {
+      background: #141414;
+      border-radius: 12px;
+      padding: 20px 15px;
+      border: 1px dashed rgba(255, 255, 255, 0.08);
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .rps-placeholder-text {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    .rps-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .rps-badge.win {
+      background: rgba(216, 112, 147, 0.2);
+      color: var(--accent-pink);
+      border: 1px solid var(--accent-pink);
+    }
+
+    .rps-badge.lose {
+      background: rgba(0, 210, 211, 0.15);
+      color: var(--accent-blue);
+      border: 1px solid var(--accent-blue);
+    }
+
+    .rps-badge.tie {
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--accent-gold);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .rps-matchup-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 10px;
+    }
+
+    .rps-fighter-anime {
+      font-size: 2.6rem;
+      animation: popInRPS 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rps-vs-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .rps-verdict-msg {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-top: 10px;
+      line-height: 1.45;
+      padding: 0 10px;
+    }
+
+    .rps-speak-again-btn {
+      margin-top: 12px;
+      background: rgba(216, 112, 147, 0.12);
+      border: 1px solid rgba(216, 112, 147, 0.4);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .rps-speak-again-btn:active {
+      transform: scale(0.95);
+      background: var(--accent-pink);
+      color: white;
+    }
+
+    @keyframes popInRPS {
+      0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    /* IMAGEN DE RODILLAS */
+    .leg-container {
+      position: relative;
+      width: 220px;
+      height: 280px;
+      margin: 15px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #f0eae1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .leg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+
+    .knee-target {
+      position: absolute;
+      top: 36%;
+      left: 45%;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(216, 112, 147, 0.85);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 15px var(--accent-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s ease;
+      z-index: 10;
+    }
+
+    .knee-target:active, .knee-target.active-tickle {
+      transform: scale(1.4);
+      background: #ff4757;
+      box-shadow: 0 0 25px #ff4757;
+    }
+
+    /* SABOTAJE EN EL GYM PRO */
+    .gym-card {
+      background: linear-gradient(145deg, #1e1e1e, #161616);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .gym-controls-section {
+      margin-bottom: 12px;
+      text-align: left;
+    }
+    .gym-section-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: block;
+      font-weight: 600;
+    }
+    .gym-pills-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .gym-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .gym-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+    }
+    .gym-pill.active {
+      background: rgba(212, 175, 55, 0.2);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+    .gym-pill.pink.active {
+      background: rgba(216, 112, 147, 0.25);
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+    .gym-pill.blue.active {
+      background: rgba(0, 210, 211, 0.2);
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+    .gym-spin-btn {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(216, 112, 147, 0.18));
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 13px;
+      border-radius: 14px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      margin: 10px 0 14px;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .gym-spin-btn:active {
+      transform: scale(0.97);
+      background: var(--accent-gold);
+      color: #121212;
+    }
+    .gym-roulette-arena {
+      background: #141414;
+      border-radius: 14px;
+      padding: 18px 14px;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .gym-roulette-rolling {
+      font-size: 2.2rem;
+      animation: gymSpinBounce 0.35s infinite alternate;
+    }
+    @keyframes gymSpinBounce {
+      0% { transform: translateY(-4px) scale(0.95); }
+      100% { transform: translateY(4px) scale(1.05); }
+    }
+    .gym-mission-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .gym-mission-badge.coqueto {
+      background: rgba(216, 112, 147, 0.2);
+      color: var(--accent-pink);
+      border: 1px solid var(--accent-pink);
+    }
+    .gym-mission-badge.risa {
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--accent-gold);
+      border: 1px solid var(--accent-gold);
+    }
+    .gym-mission-badge.maldad {
+      background: rgba(0, 210, 211, 0.2);
+      color: var(--accent-blue);
+      border: 1px solid var(--accent-blue);
+    }
+    .gym-mission-title {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .gym-mission-desc {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #dedede;
+      margin-bottom: 12px;
+    }
+    .gym-verdict-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .gym-verdict-btn {
+      flex: 1;
+      padding: 9px 6px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .gym-verdict-btn.fell {
+      background: rgba(216, 112, 147, 0.2);
+      color: var(--accent-pink);
+      border: 1px solid rgba(216, 112, 147, 0.4);
+    }
+    .gym-verdict-btn.fell:active {
+      background: var(--accent-pink);
+      color: white;
+    }
+    .gym-verdict-btn.resisted {
+      background: rgba(0, 210, 211, 0.15);
+      color: var(--accent-blue);
+      border: 1px solid rgba(0, 210, 211, 0.4);
+    }
+    .gym-verdict-btn.resisted:active {
+      background: var(--accent-blue);
+      color: #121212;
+    }
+    .gym-scoreboard-box {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 8px 12px;
+      margin-top: 15px;
+      font-size: 0.75rem;
+    }
+    .gym-score-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .gym-score-count {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--accent-gold);
+    }
+
+    .action-btn {
+      background: transparent;
+      border: 1px solid var(--accent-pink);
+      color: var(--accent-pink);
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      letter-spacing: 1px;
+      user-select: none;
+      touch-action: manipulation;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .action-btn:active {
+      background: var(--accent-pink);
+      color: white;
+    }
+
+    .pimple-result-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(216, 112, 147, 0.35);
+      border-radius: 14px;
+      padding: 16px 14px;
+      margin-top: 12px;
+      text-align: center;
+      animation: pimplePop 0.35s ease-out;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    @keyframes pimplePop {
+      0% { transform: scale(0.92); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* SISTEMA DE ROCIADOR DE AGUA */
+    .spray-box {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      margin: 15px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      cursor: pointer;
+      border: 1px solid rgba(0, 210, 211, 0.15);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .spray-box:hover {
+      border-color: rgba(0, 210, 211, 0.4);
+      box-shadow: 0 6px 20px rgba(0, 210, 211, 0.2);
+    }
+
+    .spray-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    .spray-btn {
+      border-color: var(--accent-blue) !important;
+      color: var(--accent-blue) !important;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .spray-btn:hover {
+      background: rgba(0, 210, 211, 0.1);
+    }
+
+    .spray-btn.active-spray {
+      background: var(--accent-blue) !important;
+      color: #121212 !important;
+      font-weight: bold;
+      transform: scale(0.96);
+      box-shadow: 0 0 20px rgba(0, 210, 211, 0.6);
+    }
+
+    /* Navegación Inferior (Pills sin Casita) */
+    nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(18, 18, 18, 0.95);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 12px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.6);
+    }
+
+    nav button {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 9px 20px;
+      border-radius: 25px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
+    }
+
+    nav button .nav-icon {
+      font-size: 1.15rem;
+    }
+
+    nav button .nav-label {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    nav button:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+    }
+
+    nav button#nav-cards.active-nav {
+      background: rgba(216, 112, 147, 0.2);
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+      box-shadow: 0 0 14px rgba(216, 112, 147, 0.3);
+    }
+
+    nav button#nav-arcade.active-nav {
+      background: rgba(212, 175, 55, 0.18);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Pantalla de Error de Sistema: Exceso de Amor */
+    .sys-error-backdrop {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #1b0f16 0%, #08080a 100%);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.65s;
+    }
+
+    .sys-error-backdrop.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .sys-error-card {
+      background: rgba(20, 15, 20, 0.96);
+      border: 1px solid rgba(255, 75, 110, 0.45);
+      border-radius: 20px;
+      max-width: 440px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(255, 75, 110, 0.25), 0 20px 50px rgba(0,0,0,0.85);
+      animation: errorEntry 0.45s ease-out;
+    }
+
+    @keyframes errorEntry {
+      0% { transform: scale(0.92); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .sys-error-topbar {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid rgba(255, 75, 110, 0.2);
+    }
+
+    .sys-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .sys-dot.red { background: #ff5f56; }
+    .sys-dot.yellow { background: #ffbd2e; }
+    .sys-dot.green { background: #27c93f; }
+
+    .sys-error-term-title {
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-left: 8px;
+      font-family: monospace;
+      font-weight: 600;
+    }
+
+    .sys-error-body {
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .sys-error-icon-box {
+      font-size: 2.8rem;
+      margin-bottom: 8px;
+      animation: heartErrorPulse 1.2s infinite alternate;
+    }
+
+    @keyframes heartErrorPulse {
+      0% { transform: scale(0.95); filter: drop-shadow(0 0 8px rgba(255, 75, 110, 0.4)); }
+      100% { transform: scale(1.1); filter: drop-shadow(0 0 22px rgba(255, 75, 110, 0.85)); }
+    }
+
+    .sys-error-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ff4d6d;
+      letter-spacing: 1px;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+    }
+
+    .sys-error-code {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.1);
+      padding: 4px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .sys-error-terminal {
+      background: #0d0c10;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: left;
+      font-family: monospace;
+      font-size: 0.76rem;
+      line-height: 1.55;
+      margin-bottom: 18px;
+      color: #dedede;
+    }
+
+    .sys-error-terminal .term-dim { color: #666; }
+    .sys-error-terminal .term-line { margin: 4px 0; }
+    .sys-error-terminal .term-line.alert { color: #ff6b81; font-weight: bold; }
+    .sys-error-terminal .term-line.info { color: #a29bfe; margin-top: 6px; }
+    .sys-error-terminal .term-val { color: var(--accent-pink); font-weight: bold; }
+
+    .sys-fix-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ff4d6d, #c9184a);
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(201, 24, 74, 0.5);
+      transition: all 0.25s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .sys-fix-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(201, 24, 74, 0.7);
+    }
+
+    .sys-fix-btn:active {
+      transform: scale(0.97);
+    }
+
+    .sys-error-progress-box {
+      margin-bottom: 15px;
+    }
+
+    .sys-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .sys-progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-pink));
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    .sys-progress-text {
+      font-size: 0.78rem;
+      font-family: monospace;
+      color: var(--accent-gold);
+    }
+  </style>
+
+  <!-- SCRIPT GLOBAL PREVENTIVO -->
+  <script>
+    function showView(viewId) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      const targetView = document.getElementById(viewId);
+      if (targetView) targetView.classList.add('active');
+      
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active-nav'));
+      const navBtn = document.getElementById('nav-' + viewId);
+      if (navBtn) navBtn.classList.add('active-nav');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (viewId === 'arcade' && typeof resizeSprayCanvas === 'function') {
+        setTimeout(resizeSprayCanvas, 60);
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- OVERLAY DE ERROR DEL SISTEMA: EXCESO DE AMOR -->
+  <div id="systemErrorOverlay" class="sys-error-backdrop">
+    <div class="sys-error-card">
+      <div class="sys-error-topbar">
+        <span class="sys-dot red"></span>
+        <span class="sys-dot yellow"></span>
+        <span class="sys-dot green"></span>
+        <span class="sys-error-term-title">TERMINAL // LIEBE & JOYITA</span>
+      </div>
+
+      <div class="sys-error-body">
+        <div class="sys-error-icon-box">
+          <span class="sys-error-icon">⚠️❤️‍🔥</span>
+        </div>
+
+        <h2 class="sys-error-title">¡ERROR CRÍTICO DEL SISTEMA!</h2>
+        <div class="sys-error-code">STATUS_CODE: 0xLOVE_OVERFLOW_FATAL</div>
+
+        <div class="sys-error-terminal">
+          <p class="term-line"><span class="term-dim">></span> Diagnóstico de seguridad en curso...</p>
+          <p class="term-line alert"><span class="term-dim">></span> ¡ALERTA! Se ha detectado un <strong>EXCESO DE AMOR</strong> incontrolable.</p>
+          <p class="term-line"><span class="term-dim">></span> Nivel de cariño: <span class="term-val">10,000% (Sobrecarga de ternura)</span></p>
+          <p class="term-line"><span class="term-dim">></span> Causa raíz: <span class="term-val">Pensar demasiado en ti a cada segundo.</span></p>
+          <p class="term-line"><span class="term-dim">></span> Usuarios afectados: <span class="term-val">Liebe ❤️ Joyita</span></p>
+          <p class="term-line info"><span class="term-dim">></span> Acción requerida: Calibrar el sistema para restaurar el acceso al refugio.</p>
+        </div>
+
+        <div id="sysErrorProgressBox" class="sys-error-progress-box" style="display: none;">
+          <div class="sys-progress-bar">
+            <div id="sysProgressBarFill" class="sys-progress-fill"></div>
+          </div>
+          <span id="sysProgressStatus" class="sys-progress-text">Drenando sobrecarga de besos...</span>
+        </div>
+
+        <button id="fixErrorBtn" class="sys-fix-btn" onclick="fixSystemError()">
+          🛠️ CORREGIR ERROR DE AMOR
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <h1>Liebe y Joyita</h1>
+    <p>NUESTRO REFUGIO</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- DEDICATORIAS -->
+    <div id="cards" class="view active">
+      
+      <!-- DEDICATORIA: POR UNA VIDA JUNTOS -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ POR UNA VIDA JUNTOS ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="dedicatoria_1.jpg" alt="Por una vida juntos - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Quería escribirte esto porque a veces el día a día va tan rápido que se nos olvida decirnos lo importante. Solo quiero que sepas lo orgullosa que me siento de la pareja que somos y de cómo hemos crecido juntos. Me encanta que, sin importar si estamos pasando por un momento difícil o celebrando un logro, siempre nos tenemos el uno al otro como un equipo. Tu energía, tus ganas de salir adelante y la forma en que me cuidas son cosas que valoro más de lo que imaginas. Gracias por impulsarme a ser mejor y por caminar a mi lado. Por una vida juntos y por muchísimos años más construyendo este futuro tan bonito.”
+          </p>
+          <div class="dedication-signature">
+            Con todo mi amor siempre, Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 1: CRECIENDO JUNTOS -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ CRECIENDO JUNTOS ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_1.jpg" alt="Hemos cambiado muchísimo - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Hemos cambiado muchísimo y me encanta ver lo mucho que hemos crecido. Te Amo Mucho.”
+          </p>
+          <div class="dedication-signature">
+            Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 2: AMOR -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ AMOR ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_2.jpg" alt="Eres una persona increíble - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Eres una persona increíble. Gracias por enseñarme lo que es un amor sano, maduro y súper divertido jjajjaja. Por muchísimos años más sumando momentos y sonrisas espontáneas.”
+          </p>
+          <div class="dedication-signature">
+            Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 3: PASO A PASITO -->
+      <div class="card dedication-card" id="dedicacion-3">
+        <div class="dedication-badge">✨ PASO A PASITO ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_3.png" alt="Paso a pasito - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Gracias por tu paciencia infinita, por tus abrazos apretados que curan todo y por elegir construir esta historia conmigo paso a pasito.”
+          </p>
+          <div class="dedication-signature">
+            Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 4: CABLE A TIERRA -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ MI CABLE A TIERRA ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_4.jpg" alt="El mejor día de mi vida - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Gracias por ser mi cable a tierra, por apoyarme en cada locura y por recordarme lo bonito que es amar y ser amado sin condiciones. Eres mi mayor amor, apoyo y tesoro. Una vez más te amo.”
+          </p>
+          <div class="dedication-signature">
+            Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 5: 6 AÑOS JUNTOS -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ 6 AÑOS JUNTOS ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_5.png" alt="6 Años Juntos - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Se dice fácil, pero mirar atrás y ver que ya son 6 años juntos me llena el corazón de una forma que ni te imaginas. Hemos pasado por tantas cosas, buenas, malas, retos gigantes y logros, pero lo mejor de todo es que siempre ha sido juntos, nunca ha sido solo una frase, sino nuestra realidad. Gracias por no soltarme, por crecer a mi lado y por ser la persona que va caminando a mi lado. Estoy orgullosa de nosotros y de todo lo que nos falta por vivir.”
+          </p>
+          <div class="dedication-signature">
+            Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO 6: ÁLBUM DE MOMENTOS FELICES -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ NUESTRO MUNDO A SALVO ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_6.jpg" alt="Álbum de momentos felices - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “¡Ay amor! Cada rincón a tu lado se vuelve especial. En serio gracias por enseñarme a disfrutar de las cosas simples, por tu energía que me contagia siempre y por recordarme que, pase lo que pase afuera, nuestro mundo siempre está a salvo. Por una vida entera llenando álbumes de momentos felices a tu lado.”
+          </p>
+          <div class="dedication-signature">
+            Joyita ❤️
+          </div>
+        </div>
+      </div>
+
+      <!-- DEDICATORIA: TU JOYITA POR SIEMPRE -->
+      <div class="card dedication-card">
+        <div class="dedication-badge">✨ TU JOYITA POR SIEMPRE ✨</div>
+        <div class="dedication-photo-frame">
+          <img src="foto_joyita.jpg" alt="I love you Liebe - Liebe y Joyita" class="dedication-img">
+        </div>
+        <div class="dedication-quote-box">
+          <p class="dedication-text">
+            “Quiero una vida junto a ti, te amo más de lo que puedes imaginar. Quiero ser tu Joyita por siempre. Te amo muchísimo y si lo dudas te lo vuelvo a decir: ¡te amo!”
+          </p>
+          <div class="dedication-signature">
+            Tu Joyita por siempre ❤️
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ARCADE -->
+    <div id="arcade" class="view">
+      
+      <!-- PIEDRA PAPEL TIJERA: QUIEN PIERDE FRIEGA -->
+      <div id="rpsGameSection" class="card rps-premium-card">
+        <div class="rps-controls-bar">
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600; letter-spacing:0.5px;">MINIJUEGO ESTELAR</span>
+          <span style="font-size:0.75rem; color:var(--accent-pink); font-weight:600;">🧼 CLÁSICO DE PAREJA</span>
+        </div>
+
+        <h3>✊✋✌️ Piedra, Papel o Tijera</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
+          Elige tu arma. Quien pierda se encarga de fregar los platos hoy 🧼✨
+        </p>
+
+        <!-- Marcador de Fregar Platos -->
+        <div class="rps-scoreboard">
+          <div class="rps-score-item">
+            <span class="rps-score-label">Tú</span>
+            <span id="scoreUser" class="rps-score-val">0</span>
+          </div>
+          <div class="rps-score-sep">:</div>
+          <div class="rps-score-item">
+            <span class="rps-score-label">Yo</span>
+            <span id="scoreCpu" class="rps-score-val">0</span>
+          </div>
+          <div class="rps-score-sep">|</div>
+          <div class="rps-score-item">
+            <span class="rps-score-label">Empates</span>
+            <span id="scoreTie" class="rps-score-val" style="color:var(--text-muted);">0</span>
+          </div>
+        </div>
+        
+        <div class="rps-game-wrapper">
+          <div class="rps-choices-grid">
+            <div class="rps-option-btn" onclick="selectWeapon('Piedra', '🪨', this)">
+              <span class="rps-icon">🪨</span>
+              <span class="rps-label">Piedra</span>
+            </div>
+            <div class="rps-option-btn" onclick="selectWeapon('Papel', '📄', this)">
+              <span class="rps-icon">📄</span>
+              <span class="rps-label">Papel</span>
+            </div>
+            <div class="rps-option-btn" onclick="selectWeapon('Tijera', '✂️', this)">
+              <span class="rps-icon">✂️</span>
+              <span class="rps-label">Tijera</span>
+            </div>
+          </div>
+
+          <button class="action-btn rps-execute-btn" onclick="playEpicRPS()">
+            ⚔️ ¡DUELO DE FREGAR!
+          </button>
+
+          <div class="rps-battle-arena" id="rpsArena">
+            <div class="rps-placeholder-text">
+              Selecciona tu opción arriba y ¡desafía al destino! ✨
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego 2: Cosquillas -->
+      <div class="card">
+        <h3>⚡ Cosquillas</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Mantén presionado para hacer cosquillas:</p>
+        
+        <div class="leg-container">
+          <img src="Screenshot_20260911-205707_Activity.jpeg" alt="Cosquillas Ilustración" class="leg-img">
+          <div id="kneeTarget" class="knee-target" 
+               onmousedown="startTickle(event)" onmouseup="stopTickle()" onmouseleave="stopTickle()"
+               ontouchstart="startTickle(event)" ontouchend="stopTickle()">
+            ⚡
+          </div>
+        </div>
+        
+        <p id="knee-result" style="font-size: 0.9rem; color: var(--accent-pink); height: 20px; margin-top: 10px;"></p>
+      </div>
+
+      <!-- Juego 3: Rociador de Agua -->
+      <div class="card" id="sprayCard">
+        <h3>🌧️ Rociador de Agua</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          Toca la foto o presiona el botón para empaparla de risa 💦
+        </p>
+        
+        <div id="sprayContainer" class="spray-box" onclick="sprayBurst()">
+          <img id="sprayImage" src="106136.jpg" alt="Rociador de Agua" style="width: 100%; display: block; user-select: none;">
+          <canvas id="sprayCanvas" class="spray-canvas"></canvas>
+        </div>
+
+        <button id="sprayBtn" class="action-btn spray-btn" 
+                onpointerdown="onSprayPointerDown(event)" 
+                onpointerup="onSprayPointerUp(event)" 
+                onpointercancel="onSprayPointerUp(event)"
+                onclick="sprayBurst()">
+          💦 ¡ACTIVAR ROCIADOR!
+        </button>
+        
+        <p id="water-result" style="font-size: 0.95rem; color: var(--accent-blue); min-height: 24px; margin-top: 15px; font-weight: 500;"></p>
+      </div>
+
+      <!-- Juego 4: Sabotaje en el Gym PRO -->
+      <div class="card gym-card" id="gymSabotageCard">
+        <h3>🏋️‍♂️ Sabotaje en el Gym</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+          ¿Quién entrena hoy? ¡Sortea al azar una misión para desconcentrarlo y hacerlo reír en plena serie! 😈✨
+        </p>
+
+        <!-- Selector de Víctima -->
+        <div class="gym-controls-section">
+          <span class="gym-section-title">🎯 ¿A quién saboteamos hoy?</span>
+          <div class="gym-pills-row" id="gymTargetPills">
+            <button class="gym-pill active" onclick="setGymTarget('all', this)">🎲 Al que entrene</button>
+            <button class="gym-pill blue" onclick="setGymTarget('him', this)">🏋️‍♂️ A Él</button>
+            <button class="gym-pill pink" onclick="setGymTarget('her', this)">🏋️‍♀️ A Ella</button>
+          </div>
+        </div>
+
+        <!-- Selector de Estilo de Sabotaje -->
+        <div class="gym-controls-section">
+          <span class="gym-section-title">🎭 Estilo de sabotaje:</span>
+          <div class="gym-pills-row" id="gymCatPills">
+            <button class="gym-pill active" onclick="setGymCategory('all', this)">🎲 Todo Vale</button>
+            <button class="gym-pill" onclick="setGymCategory('risa', this)">🤪 Risa</button>
+            <button class="gym-pill pink" onclick="setGymCategory('coqueto', this)">💋 Coqueto</button>
+            <button class="gym-pill blue" onclick="setGymCategory('maldad', this)">😈 Maldad</button>
+          </div>
+        </div>
+
+        <!-- Botón de Giro de Ruleta -->
+        <button class="gym-spin-btn" id="spinSabotageBtn" onclick="spinGymSabotage()">
+          🎰 ¡GIRAR RULETA DE SABOTAJE!
+        </button>
+
+        <!-- Arena de Resultado de la Ruleta -->
+        <div class="gym-roulette-arena" id="gymArena">
+          <div style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">
+            Selecciona los filtros arriba y ¡gira la ruleta de sabotajes! 🎲🔥
+          </div>
+        </div>
+
+        <!-- Marcador de Sabotajes -->
+        <div class="gym-scoreboard-box">
+          <div class="gym-score-col">
+            <span style="color: var(--text-muted); font-size: 0.68rem; text-transform: uppercase;">😈 Sabotajes Exitosos</span>
+            <span id="gymSabotagesCount" class="gym-score-count">0</span>
+          </div>
+          <div style="color: var(--text-muted); font-weight: 300;">|</div>
+          <div class="gym-score-col">
+            <span style="color: var(--text-muted); font-size: 0.68rem; text-transform: uppercase;">🛡️ Fuerza de Voluntad</span>
+            <span id="gymResistCount" class="gym-score-count" style="color: var(--accent-blue);">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego 5: Extracción de Espinillas -->
+      <div class="card" id="pimpleCard">
+        <h3>🔍 Extracción de Espinillas</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+          Toca el botón para iniciar el escaneo facial:
+        </p>
+        <button class="action-btn" id="pimpleScanBtn" onclick="triggerPimpleScan()" style="border-color: var(--accent-pink); color: var(--accent-pink); background: rgba(216, 112, 147, 0.08);">
+          🎯 ¡BUSCAR ESPINILLAS!
+        </button>
+        <div id="scanStatus" style="margin-top: 15px; min-height: 40px;"></div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- NAVEGACIÓN INFERIOR (SIN CASITA) -->
+  <nav>
+    <button onclick="showView('cards')" id="nav-cards" class="active-nav">
+      <span class="nav-icon">💌</span>
+      <span class="nav-label">Dedicatorias</span>
+    </button>
+    <button onclick="showView('arcade')" id="nav-arcade">
+      <span class="nav-icon">🎮</span>
+      <span class="nav-label">Zona de Juegos</span>
+    </button>
+  </nav>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Solución del Error de Sistema: Exceso de Amor
+    function fixSystemError() {
+      const btn = document.getElementById('fixErrorBtn');
+      const progressBox = document.getElementById('sysErrorProgressBox');
+      const fill = document.getElementById('sysProgressBarFill');
+      const status = document.getElementById('sysProgressStatus');
+      const overlay = document.getElementById('systemErrorOverlay');
+
+      if (!btn || !overlay) return;
+      btn.disabled = true;
+      btn.style.display = 'none';
+      if (progressBox) progressBox.style.display = 'block';
+
+      playSound('select');
+      if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
+
+      let pct = 0;
+      const interval = setInterval(() => {
+        pct += 25;
+        if (fill) fill.style.width = pct + '%';
+        if (status) {
+          if (pct === 25) status.innerText = 'Drenando sobrecarga de besos... 25%';
+          if (pct === 50) status.innerText = 'Estabilizando latidos acelerados... 50%';
+          if (pct === 75) status.innerText = 'Calibrando ternura al 100%... 75%';
+          if (pct >= 100) status.innerText = '✅ ¡Amor calibrado con éxito! Abriendo nuestro refugio...';
+        }
+        playSound('tick');
+
+        if (pct >= 100) {
+          clearInterval(interval);
+          playSound('win');
+          if (navigator.vibrate) navigator.vibrate([100, 50, 150]);
+
+          setTimeout(() => {
+            overlay.classList.add('hidden');
+            setTimeout(() => {
+              overlay.style.display = 'none';
+            }, 680);
+          }, 800);
+        }
+      }, 260);
+    }
+
+    // 1. PIEDRA PAPEL TIJERA CON EFECTOS Y MARCADOR
+    let currentWeapon = '';
+    let currentEmoji = '';
+    let scoreUser = 0;
+    let scoreCpu = 0;
+    let scoreTie = 0;
+    let lastVerdictText = "";
+
+    function scrollToRPS() {
+      setTimeout(() => {
+        const el = document.getElementById('rpsGameSection');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    // Efectos de sonido mediante Web Audio API
+    let audioCtx = null;
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (AC) audioCtx = new AC();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      try {
+        const ctx = getAudioCtx();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+
+        if (type === 'select') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(720, now + 0.08);
+          gain.gain.setValueAtTime(0.1, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        } else if (type === 'tick') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.frequency.setValueAtTime(320, now);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'win') {
+          [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+            const o = ctx.createOscillator();
+            const g = ctx.createGain();
+            o.connect(g);
+            g.connect(ctx.destination);
+            o.frequency.value = freq;
+            g.gain.setValueAtTime(0.12, now + idx * 0.1);
+            g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.25);
+            o.start(now + idx * 0.1);
+            o.stop(now + idx * 0.1 + 0.25);
+          });
+        } else if (type === 'lose') {
+          [440, 370, 311, 261].forEach((freq, idx) => {
+            const o = ctx.createOscillator();
+            const g = ctx.createGain();
+            o.connect(g);
+            g.connect(ctx.destination);
+            o.frequency.value = freq;
+            g.gain.setValueAtTime(0.12, now + idx * 0.12);
+            g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.12 + 0.22);
+            o.start(now + idx * 0.12);
+            o.stop(now + idx * 0.12 + 0.22);
+          });
+        } else if (type === 'tie') {
+          [440, 440].forEach((freq, idx) => {
+            const o = ctx.createOscillator();
+            const g = ctx.createGain();
+            o.connect(g);
+            g.connect(ctx.destination);
+            o.frequency.value = freq;
+            g.gain.setValueAtTime(0.09, now + idx * 0.12);
+            g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.12 + 0.15);
+            o.start(now + idx * 0.12);
+            o.stop(now + idx * 0.12 + 0.15);
+          });
+        }
+      } catch(e) {}
+    }
+
+    // Narración de voz desactivada a petición
+    function primeSpeech() {}
+    function speakPhrase(text) {}
+
+    function selectWeapon(weapon, emoji, element) {
+      currentWeapon = weapon;
+      currentEmoji = emoji;
+      
+      document.querySelectorAll('.rps-option-btn').forEach(btn => btn.classList.remove('selected'));
+      element.classList.add('selected');
+      
+      playSound('select');
+      primeSpeech();
+      if (navigator.vibrate) navigator.vibrate(40);
+    }
+
+    function updateScoreboard() {
+      const u = document.getElementById('scoreUser');
+      const c = document.getElementById('scoreCpu');
+      const t = document.getElementById('scoreTie');
+      if (u) u.innerText = scoreUser;
+      if (c) c.innerText = scoreCpu;
+      if (t) t.innerText = scoreTie;
+    }
+
+    function playEpicRPS() {
+      const arena = document.getElementById('rpsArena');
+      
+      if (!currentWeapon) {
+        arena.innerHTML = '<span style="color: #ff4757; font-size: 0.85rem;">⚠️ ¡Primero debes elegir una opción (Piedra, Papel o Tijera), amor!</span>';
+        return;
+      }
+
+      playSound('tick');
+
+      const executeBtn = document.querySelector('.rps-execute-btn');
+      if (executeBtn) executeBtn.disabled = true;
+
+      const emojisSeq = ['🪨', '📄', '✂️'];
+      let counter = 0;
+      
+      arena.innerHTML = `
+        <div style="color: var(--accent-gold); font-size: 0.85rem; letter-spacing: 1px;">
+          ¿Quién friega los platos hoy? 🧼<br>
+          <span id="rollingEmoji" style="font-size: 2.2rem; display: inline-block; margin-top: 8px;">🎲</span>
+        </div>
+      `;
+
+      const rollInterval = setInterval(() => {
+        const el = document.getElementById('rollingEmoji');
+        if (el) el.innerText = emojisSeq[counter % emojisSeq.length];
+        playSound('tick');
+        counter++;
+      }, 90);
+
+      setTimeout(() => {
+        clearInterval(rollInterval);
+        if (executeBtn) executeBtn.disabled = false;
+
+        const optionsPool = [
+          { name: 'Piedra', emoji: '🪨' },
+          { name: 'Papel', emoji: '📄' },
+          { name: 'Tijera', emoji: '✂️' }
+        ];
+        const machineChoice = optionsPool[Math.floor(Math.random() * optionsPool.length)];
+
+        let verdictBadge = "";
+        let badgeClass = "";
+        let verdictText = "";
+        let verdictColor = "var(--accent-gold)";
+        let vibratePattern = [70, 50, 70];
+
+        if (currentWeapon === machineChoice.name) {
+          scoreTie++;
+          verdictBadge = "🤝 ¡EMPATE TÉCNICO!";
+          badgeClass = "tie";
+          const tiePhrases = [
+            "¡Empate técnico! Se libran ambos o friegan codo a codo.",
+            "¡Empate! Nadie friega o lo decidimos con la revancha inmediata.",
+            "¡Empatados! Hoy la cocina descansa o friegan a medias como buen equipo."
+          ];
+          verdictText = tiePhrases[Math.floor(Math.random() * tiePhrases.length)];
+          verdictColor = "var(--accent-gold)";
+          playSound('tie');
+        } else if (
+          (currentWeapon === 'Piedra' && machineChoice.name === 'Tijera') ||
+          (currentWeapon === 'Papel' && machineChoice.name === 'Piedra') ||
+          (currentWeapon === 'Tijera' && machineChoice.name === 'Papel')
+        ) {
+          scoreUser++;
+          verdictBadge = "🎉 ¡VICTORIA TUYA! 🎉";
+          badgeClass = "win";
+          const winPhrases = [
+            "🎉 ¡Ganaste! Te salvaste por hoy, me toca fregar los platos a mí con amor (y sin quejas).",
+            "✨ ¡Victoria tuya! Disfruta tu descanso en el sofá, hoy me encargo yo de la cocina.",
+            "👑 ¡Ganaste el duelo! Te toca relajarte, hoy friego yo con mucho gusto.",
+            "🌟 ¡Qué campeona! Salvaste tus manitas, el agua y el jabón son todos míos hoy."
+          ];
+          verdictText = winPhrases[Math.floor(Math.random() * winPhrases.length)];
+          verdictColor = "var(--accent-pink)";
+          vibratePattern = [80, 50, 100, 50, 150];
+          playSound('win');
+        } else {
+          scoreCpu++;
+          verdictBadge = "🧼 ¡A FREGAR SE HA DICHO! 🧼";
+          badgeClass = "lose";
+          const losePhrases = [
+            "🧼 ¡Gané yo! Te tocó turno de honor en el fregadero, ¡a lavar con una sonrisa!",
+            "🫧 ¡Perdiste! Lo siento mucho amor, hoy los platos tienen tu nombre y apellido.",
+            "💀 ¡Punto para mí! Alista tus manitas porque te toca fregar reluciente con la esponjita.",
+            "🍽️ ¡Te tocó fregar hoy! Yo te acompaño haciéndote barra con mucho cariño mientras lavas."
+          ];
+          verdictText = losePhrases[Math.floor(Math.random() * losePhrases.length)];
+          verdictColor = "var(--accent-blue)";
+          vibratePattern = [150, 80, 200];
+          playSound('lose');
+        }
+
+        lastVerdictText = verdictText;
+        updateScoreboard();
+
+        arena.innerHTML = `
+          <div class="rps-badge ${badgeClass}">${verdictBadge}</div>
+          <div class="rps-matchup-box">
+            <div class="rps-fighter-anime">
+              ${currentEmoji}
+              <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Tú: ${currentWeapon}</div>
+            </div>
+            <div class="rps-vs-text">VS</div>
+            <div class="rps-fighter-anime">
+              ${machineChoice.emoji}
+              <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Yo: ${machineChoice.name}</div>
+            </div>
+          </div>
+          <div class="rps-verdict-msg" style="color: ${verdictColor};">${verdictText}</div>
+        `;
+
+        if (navigator.vibrate) navigator.vibrate(vibratePattern);
+      }, 850);
+    }
+
+    // 2. Zona de Cosquillas
+    let tickleInterval;
+    function startTickle(e) {
+      if (e && e.cancelable) e.preventDefault();
+      
+      const target = document.getElementById('kneeTarget');
+      const resultText = document.getElementById('knee-result');
+      
+      target.classList.add('active-tickle');
+      resultText.innerText = "¡ATAQUE DE COSQUILLAS EN PROCESO! 🤣⚡";
+
+      if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+
+      clearInterval(tickleInterval);
+      tickleInterval = setInterval(() => {
+        if (navigator.vibrate) navigator.vibrate([200, 50, 200]);
+      }, 250);
+    }
+
+    function stopTickle() {
+      clearInterval(tickleInterval);
+      const target = document.getElementById('kneeTarget');
+      const resultText = document.getElementById('knee-result');
+      
+      if (target) target.classList.remove('active-tickle');
+      if (resultText && resultText.innerText !== "") {
+        setTimeout(() => { resultText.innerText = ""; }, 1500);
+      }
+    }
+    // 3. ROCIADOR DE AGUA CON CANVAS, FÍSICA Y SONIDO REAL
+    let sprayCanvas = null;
+    let sprayCtx = null;
+    let sprayParticles = [];
+    let splashParticles = [];
+    let dripParticles = [];
+    let isSpraying = false;
+    let sprayAnimId = null;
+    let sprayTimeout = null;
+    let sprayStartTime = 0;
+    let sprayAudioNodes = null;
+    let sprayPhraseTimer = null;
+    let pointerDownTime = 0;
+
+    function initSprayEngine() {
+      sprayCanvas = document.getElementById('sprayCanvas');
+      if (!sprayCanvas) return;
+      sprayCtx = sprayCanvas.getContext('2d');
+      resizeSprayCanvas();
+      window.addEventListener('resize', resizeSprayCanvas);
+      
+      const img = document.getElementById('sprayImage');
+      if (img) {
+        if (img.complete) {
+          resizeSprayCanvas();
+        } else {
+          img.onload = resizeSprayCanvas;
+        }
+      }
+    }
+
+    function resizeSprayCanvas() {
+      if (!sprayCanvas) return;
+      const rect = sprayCanvas.parentElement.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        sprayCanvas.width = rect.width;
+        sprayCanvas.height = rect.height;
+      }
+    }
+
+    function startSprayAudio() {
+      try {
+        const ctx = getAudioCtx();
+        if (!ctx || sprayAudioNodes) return;
+
+        const bufferSize = ctx.sampleRate * 2;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const output = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          output[i] = (Math.random() * 2 - 1) * 0.7;
+        }
+
+        const whiteNoise = ctx.createBufferSource();
+        whiteNoise.buffer = buffer;
+        whiteNoise.loop = true;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(3400, ctx.currentTime);
+        filter.Q.setValueAtTime(1.1, ctx.currentTime);
+
+        const filter2 = ctx.createBiquadFilter();
+        filter2.type = 'lowpass';
+        filter2.frequency.setValueAtTime(4500, ctx.currentTime);
+
+        const gain = ctx.createGain();
+        const now = ctx.currentTime;
+        gain.gain.setValueAtTime(0.01, now);
+        gain.gain.linearRampToValueAtTime(0.22, now + 0.05);
+
+        whiteNoise.connect(filter);
+        filter.connect(filter2);
+        filter2.connect(gain);
+        gain.connect(ctx.destination);
+
+        whiteNoise.start(now);
+        sprayAudioNodes = { whiteNoise, gain, ctx };
+      } catch (err) {
+        console.warn('Audio spray error:', err);
+      }
+    }
+
+    function stopSprayAudio() {
+      if (sprayAudioNodes) {
+        try {
+          const { whiteNoise, gain, ctx } = sprayAudioNodes;
+          const now = ctx.currentTime;
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+          setTimeout(() => {
+            try { whiteNoise.stop(); } catch(e){}
+          }, 90);
+        } catch(e){}
+        sprayAudioNodes = null;
+      }
+    }
+
+    // 3. ROCIADOR DE AGUA CON GOTAS ILUMINADAS ESTILO ILUSTRACIÓN (IDÉNTICO A LA REFERENCIA)
+    let sprayOrbs = [];
+
+    // Generar gotas orbe luminosas idénticas a la imagen de referencia
+    function spawnLuminousSpray() {
+      if (!sprayCanvas) return;
+      const W = sprayCanvas.width;
+      const H = sprayCanvas.height;
+      if (W === 0 || H === 0) return;
+
+      const nozzleX = W * 0.475;
+      const nozzleY = H * 0.395;
+
+      // Centro anatómico exacto del rostro (frente, nariz, mejillas) en 106136.jpg
+      const faceCenterX = W * 0.765;
+      const faceCenterY = H * 0.405;
+
+      // Paleta idéntica a la imagen: blancos puros, celestes eléctricos y cian brillante
+      const colorPalettes = [
+        { core: '#ffffff', glow: 'rgba(255, 255, 255, 0.65)' },
+        { core: '#ffffff', glow: 'rgba(224, 247, 250, 0.6)' },
+        { core: '#38b6ff', glow: 'rgba(56, 182, 255, 0.55)' },
+        { core: '#4fc3f7', glow: 'rgba(79, 195, 247, 0.55)' },
+        { core: '#00e5ff', glow: 'rgba(0, 229, 255, 0.55)' },
+        { core: '#81d4fa', glow: 'rgba(129, 212, 250, 0.5)' }
+      ];
+
+      // Lanzar ráfaga constante de gotas finas (20 a 28 gotas por frame)
+      const count = 20 + Math.floor(Math.random() * 8);
+      for (let i = 0; i < count; i++) {
+        // Tamaños finos, delicados y nada exagerados:
+        // - Mayoría de microgotitas finas: 0.9 - 1.5px
+        // - Gotas medianas: 1.6 - 2.3px
+        // - Gotas destacadas máximas: 2.4 - 3.1px
+        const sizeRand = Math.random();
+        let radius;
+        if (sizeRand < 0.60) {
+          radius = 0.9 + Math.random() * 0.6; // 0.9 - 1.5px
+        } else if (sizeRand < 0.90) {
+          radius = 1.6 + Math.random() * 0.7; // 1.6 - 2.3px
+        } else {
+          radius = 2.4 + Math.random() * 0.7; // 2.4 - 3.1px
+        }
+
+        const col = colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
+
+        // 75% de las gotas van dirigidas al centro del rostro (frente, nariz, ojos, mejillas)
+        // 25% van al cabello circundante y alrededor de la cabeza
+        let destX, destY;
+        if (Math.random() < 0.75) {
+          // Centrado directamente en su cara (frente, mejillas, nariz)
+          destX = faceCenterX + (Math.random() - 0.48) * (W * 0.13); // 70% a 83% de ancho
+          destY = faceCenterY + (Math.random() - 0.48) * (H * 0.22); // 30% a 51% de alto
+        } else {
+          // Envolviendo el cabello y silueta de la cabeza
+          destX = faceCenterX + (Math.random() - 0.35) * (W * 0.22);
+          destY = faceCenterY + (Math.random() - 0.5) * (H * 0.32);
+        }
+
+        const angle = Math.atan2(destY - nozzleY, destX - nozzleX);
+        const speed = 7.5 + Math.random() * 9.0;
+
+        sprayOrbs.push({
+          x: nozzleX + (Math.random() - 0.5) * 3,
+          y: nozzleY + (Math.random() - 0.5) * 3,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          radius: radius,
+          coreColor: col.core,
+          glowColor: col.glow,
+          destX: destX,
+          destY: destY,
+          state: 'flying', // 'flying' -> 'lingering' (flotando en su rostro)
+          life: 1.0,
+          decay: 0.016 + Math.random() * 0.014,
+          wobblePhase: Math.random() * Math.PI * 2,
+          wobbleSpeed: 0.04 + Math.random() * 0.06,
+          floatVx: (Math.random() - 0.5) * 0.4,
+          floatVy: (Math.random() - 0.5) * 0.4
+        });
+      }
+    }
+
+    function renderLuminousSpray() {
+      if (!sprayCanvas || !sprayCtx) return;
+      const W = sprayCanvas.width;
+      const H = sprayCanvas.height;
+      if (W === 0 || H === 0) return;
+
+      sprayCtx.clearRect(0, 0, W, H);
+
+      if (isSpraying) {
+        spawnLuminousSpray();
+      }
+
+      // Dibujar cada gota orbe luminosa (fina y delicada)
+      for (let i = sprayOrbs.length - 1; i >= 0; i--) {
+        const p = sprayOrbs[i];
+
+        if (p.state === 'flying') {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Al llegar a su destino en el rostro, se posa, flota y brilla
+          if (p.x >= p.destX || p.x >= W * 0.83) {
+            p.state = 'lingering';
+            p.vx *= 0.12;
+            p.vy *= 0.12;
+          }
+        } else {
+          // Estado flotando en el rostro/cabello
+          p.wobblePhase += p.wobbleSpeed;
+          p.x += p.floatVx + Math.cos(p.wobblePhase) * 0.3;
+          p.y += p.floatVy + Math.sin(p.wobblePhase) * 0.3;
+          p.life -= p.decay;
+        }
+
+        // Eliminar si terminó su vida útil o salió de pantalla
+        if (p.life <= 0 || p.x > W + 30 || p.y > H + 30 || p.y < -30) {
+          sprayOrbs.splice(i, 1);
+          continue;
+        }
+
+        const currentAlpha = Math.max(0, Math.min(1, p.life));
+        const r = p.radius;
+
+        sprayCtx.save();
+        sprayCtx.globalAlpha = currentAlpha;
+
+        // 1. Halo exterior suave y sutil
+        sprayCtx.beginPath();
+        sprayCtx.arc(p.x, p.y, r * 1.35, 0, Math.PI * 2);
+        sprayCtx.fillStyle = p.glowColor;
+        sprayCtx.fill();
+
+        // 2. Cuerpo circular nítido de la gota
+        sprayCtx.beginPath();
+        sprayCtx.arc(p.x, p.y, r, 0, Math.PI * 2);
+        sprayCtx.fillStyle = p.coreColor;
+        sprayCtx.fill();
+
+        // 3. Destello especular blanco en gotas medianas/destacadas
+        if (r >= 2.0) {
+          sprayCtx.beginPath();
+          sprayCtx.arc(p.x - r * 0.28, p.y - r * 0.28, r * 0.35, 0, Math.PI * 2);
+          sprayCtx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+          sprayCtx.fill();
+        }
+
+        sprayCtx.restore();
+      }
+
+      // Continuar animación mientras siga activo o haya gotas flotando
+      if (isSpraying || sprayOrbs.length > 0) {
+        sprayAnimId = requestAnimationFrame(renderLuminousSpray);
+      } else {
+        sprayAnimId = null;
+        sprayCtx.clearRect(0, 0, W, H);
+      }
+    }
+
+    function beginWaterSpray() {
+      if (isSpraying) return;
+      isSpraying = true;
+      sprayStartTime = Date.now();
+      resizeSprayCanvas();
+
+      const btn = document.getElementById('sprayBtn');
+      if (btn) {
+        btn.classList.add('active-spray');
+        btn.innerText = '💦 ¡ROCIANDO AGUA!';
+      }
+
+      const res = document.getElementById('water-result');
+      if (res) {
+        res.innerText = '¡Ssssssplash! 💦🤣';
+      }
+
+      startSprayAudio();
+      if (navigator.vibrate) navigator.vibrate([60, 30, 60, 30, 60]);
+
+      if (!sprayAnimId) {
+        sprayAnimId = requestAnimationFrame(renderLuminousSpray);
+      }
+    }
+
+    function endWaterSpray(minimumDuration = 0) {
+      const elapsed = Date.now() - sprayStartTime;
+      const remaining = Math.max(0, minimumDuration - elapsed);
+
+      clearTimeout(sprayTimeout);
+      sprayTimeout = setTimeout(() => {
+        isSpraying = false;
+        stopSprayAudio();
+
+        const btn = document.getElementById('sprayBtn');
+        if (btn) {
+          btn.classList.remove('active-spray');
+          btn.innerText = '💦 ¡ACTIVAR ROCIADOR!';
+        }
+
+        // Frases variadas y locución al terminar el rociador
+        const phrases = [
+          "¡Quedó empapada pero feliz! 🌊😂",
+          "¡Ataque de agua sorpresa ejecutado con éxito! 💦🤣",
+          "¡Bañito refrescante con amor! 💦🥰",
+          "¡Un chorrito de agua para que te calmes, amor! 💦😆"
+        ];
+        const chosenPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+
+        const res = document.getElementById('water-result');
+        if (res) {
+          res.innerText = chosenPhrase;
+          clearTimeout(sprayPhraseTimer);
+          sprayPhraseTimer = setTimeout(() => {
+            if (res && !isSpraying) res.innerText = '';
+          }, 3500);
+        }
+
+      }, remaining);
+    }
+
+    // Disparo por toque simple (ráfaga garantizada de 1.2s)
+    function sprayBurst() {
+      beginWaterSpray();
+      endWaterSpray(1200);
+    }
+
+    // Soporte para mantener presionado
+    function onSprayPointerDown(e) {
+      if (e && e.cancelable) e.preventDefault();
+      pointerDownTime = Date.now();
+      beginWaterSpray();
+    }
+
+    function onSprayPointerUp(e) {
+      const duration = Date.now() - pointerDownTime;
+      // Si fue un clic o toque corto (< 350ms), asegurar ráfaga mínima de 1200ms
+      const minDuration = duration < 350 ? 1200 : 100;
+      endWaterSpray(minDuration);
+    }
+
+    // Inicializar canvas al cargar
+    window.addEventListener('DOMContentLoaded', initSprayEngine);
+    setTimeout(initSprayEngine, 300);
+
+    // 4. Sabotaje en el Gym PRO - Ruleta Dinámica
+    let gymTarget = 'all'; // 'all', 'him', 'her'
+    let gymCategory = 'all'; // 'all', 'risa', 'coqueto', 'maldad'
+    let gymSabotageScore = 0;
+    let gymResistScore = 0;
+    let isSpinningGym = false;
+    let currentGymMission = null;
+
+    const gymSabotagesDB = [
+      {
+        id: 1,
+        title: "Mirada Asesina sin Parpadear",
+        desc: "Párate justo frente a su rostro en su serie más pesada y clávale la mirada más seria y fija que puedas sin sonreír ni parpadear.",
+        cat: "risa",
+        target: "both",
+        icon: "👁️"
+      },
+      {
+        id: 2,
+        title: "El Conteo Descarado",
+        desc: "Ponte a contar sus repeticiones en voz alta pero salteándote números al azar: '¡1, 2, 5, 8, 3... te faltan 15!'.",
+        cat: "risa",
+        target: "both",
+        icon: "🔢"
+      },
+      {
+        id: 3,
+        title: "Beso Distractor",
+        desc: "En la última repetición cuando esté temblando del esfuerzo, acércate sigilosamente y dale un beso sorpresa en la mejilla o cuello.",
+        cat: "coqueto",
+        target: "both",
+        icon: "💋"
+      },
+      {
+        id: 4,
+        title: "Elogio en Voz Alta",
+        desc: "Grita con voz de entrenador eufórico: '¡Miren todos esa obra de arte, qué monumento de persona!'.",
+        cat: "coqueto",
+        target: "both",
+        icon: "📣"
+      },
+      {
+        id: 5,
+        title: "El Bailecito Ridículo",
+        desc: "Ponte a hacer un baile ridículo y exagerado exactamente en su campo visual mientras levanta el peso.",
+        cat: "risa",
+        target: "both",
+        icon: "💃"
+      },
+      {
+        id: 6,
+        title: "Susurro al Oído",
+        desc: "Acércate suavemente por detrás y susúrrale despacio: '¿Sabías que después del gym te toca prepararme la cena?'.",
+        cat: "coqueto",
+        target: "both",
+        icon: "👂"
+      },
+      {
+        id: 7,
+        title: "Pánico Falso de Ropa",
+        desc: "Abre los ojos como en shock total, señálale disimuladamente el pantalón como si se le hubiera roto o rajado en plena sentadilla.",
+        cat: "maldad",
+        target: "both",
+        icon: "😱"
+      },
+      {
+        id: 8,
+        title: "Grito de Gimnasio Exagerado",
+        desc: "Cada vez que haga una repetición, haz tú el gemido de esfuerzo por él o ella: '¡¡UAAASHHH!! ¡¡CON FURIAAA!!'.",
+        cat: "risa",
+        target: "both",
+        icon: "🗣️"
+      },
+      {
+        id: 9,
+        title: "El Robo de la Botella",
+        desc: "Justo cuando termine o esté por apoyarla, retírale suavemente su botella de agua o toalla y tírale un guiño coqueto.",
+        cat: "maldad",
+        target: "both",
+        icon: "💧"
+      },
+      {
+        id: 10,
+        title: "Chiste Malo en Repetición Clave",
+        desc: "Cuéntale el peor chiste que te sepas justo en la repetición número 7. ¡Si suelta la barra o sonríe, ganaste!",
+        cat: "risa",
+        target: "both",
+        icon: "🤡"
+      },
+      {
+        id: 11,
+        title: "Chequeo de Músculo Coqueto",
+        desc: "Tócale el bíceps o pierna con cara de experta/o y dile: 'Hmm, le falta congestión a eso, ¿estamos entrenando o modelando?'.",
+        cat: "coqueto",
+        target: "both",
+        icon: "💪"
+      },
+      {
+        id: 12,
+        title: "Foto Paparazzi Infraganti",
+        desc: "Saca el móvil, acércate en contrapicado exagerado y dile: '¡Sonríe para tu club de admiradores exclusivos!'.",
+        cat: "risa",
+        target: "both",
+        icon: "📸"
+      },
+      {
+        id: 13,
+        title: "La Tentación de Comida",
+        desc: "Describe en detalle al oído su antojo favorito: 'Imagínate saliendo de aquí comiendo una hamburguesa con papitas crujientes...'.",
+        cat: "maldad",
+        target: "both",
+        icon: "🍔"
+      },
+      {
+        id: 14,
+        title: "Acariciar el Pelo con Ternura",
+        desc: "Acércate y acomódale un mechón de pelo o la gorra con extrema ternura y calma en medio de su serie más intensa.",
+        cat: "coqueto",
+        target: "both",
+        icon: "🥰"
+      },
+      {
+        id: 15,
+        title: "Caras Deformes Prohibidas",
+        desc: "Ponte a 40 centímetros y haz la cara más deformada y chistosa posible (ojos bizcos, trompa) manteniendo la compostura.",
+        cat: "risa",
+        target: "both",
+        icon: "🤪"
+      },
+      {
+        id: 16,
+        title: "Pregunta Existencial Imposible",
+        desc: "Justo en el fallo muscular pregúntale muy serio/a: 'Amor, si fueras una proteína en polvo, ¿de qué sabor serías?'.",
+        cat: "risa",
+        target: "both",
+        icon: "🐛"
+      },
+      {
+        id: 17,
+        title: "El Toquecito Eléctrico",
+        desc: "Dale un toque cosquilloso muy ligero por sorpresa justo antes de que empiece a bajar el peso.",
+        cat: "maldad",
+        target: "both",
+        icon: "⚡"
+      },
+      {
+        id: 18,
+        title: "Masajito Inoportuno",
+        desc: "Ponte a darle un masaje súper zen y relajante en el cuello cuando está intentando llenarse de adrenalina.",
+        cat: "coqueto",
+        target: "both",
+        icon: "💆"
+      },
+      {
+        id: 19,
+        title: "Porrista Personal Exaltado",
+        desc: "Empieza a aplaudirle con ritmo exagerado como animador escolar: '¡Eso, dale, que se vea la disciplina y el sazón!'.",
+        cat: "risa",
+        target: "both",
+        icon: "🎉"
+      },
+      {
+        id: 20,
+        title: "El Spotter Fantasma",
+        desc: "Finge que vas a ayudar a sostener la barra o mancuerna pero solo pon un meñique sin hacer nada de fuerza y dile '¡Dale, te tengo seguro!'.",
+        cat: "maldad",
+        target: "both",
+        icon: "🏋️"
+      }
+    ];
+
+    function setGymTarget(target, el) {
+      gymTarget = target;
+      document.querySelectorAll('#gymTargetPills .gym-pill').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+      playSound('select');
+      if (navigator.vibrate) navigator.vibrate(20);
+    }
+
+    function setGymCategory(cat, el) {
+      gymCategory = cat;
+      document.querySelectorAll('#gymCatPills .gym-pill').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+      playSound('select');
+      if (navigator.vibrate) navigator.vibrate(20);
+    }
+
+    function spinGymSabotage() {
+      if (isSpinningGym) return;
+      isSpinningGym = true;
+      primeSpeech();
+      playSound('tick');
+      if (navigator.vibrate) navigator.vibrate([30, 40, 30]);
+
+      const btn = document.getElementById('spinSabotageBtn');
+      const arena = document.getElementById('gymArena');
+      if (btn) btn.disabled = true;
+
+      // Filtrar misiones disponibles
+      let pool = gymSabotagesDB.filter(m => {
+        const matchesTarget = (gymTarget === 'all') || (m.target === 'both') || (m.target === gymTarget);
+        const matchesCat = (gymCategory === 'all') || (m.cat === gymCategory);
+        return matchesTarget && matchesCat;
+      });
+
+      if (pool.length === 0) pool = gymSabotagesDB;
+
+      // Animación de ruleta
+      const rouletteIcons = ['🏋️‍♂️', '😈', '💋', '🤣', '🍕', '💣', '👀', '🔥', '⚡'];
+      let ticks = 0;
+      const maxTicks = 12;
+
+      const interval = setInterval(() => {
+        ticks++;
+        const randIcon = rouletteIcons[Math.floor(Math.random() * rouletteIcons.length)];
+        arena.innerHTML = `
+          <div class="gym-roulette-rolling">${randIcon}</div>
+          <p style="font-size: 0.82rem; color: var(--accent-gold); margin-top: 8px; font-weight: 600;">
+            Sorteando sabotaje táctico...
+          </p>
+        `;
+        playSound('tick');
+
+        if (ticks >= maxTicks) {
+          clearInterval(interval);
+          const chosen = pool[Math.floor(Math.random() * pool.length)];
+          currentGymMission = chosen;
+          renderGymMission(chosen);
+          if (btn) btn.disabled = false;
+          isSpinningGym = false;
+        }
+      }, 110);
+    }
+
+    function renderGymMission(mission) {
+      const arena = document.getElementById('gymArena');
+      if (!arena) return;
+
+      const badgeLabel = mission.cat === 'coqueto' ? '💋 Sabotaje Coqueto' :
+                         mission.cat === 'maldad' ? '😈 Maldad Pura' : '🤪 Ataque de Risa';
+
+      arena.innerHTML = `
+        <span class="gym-mission-badge ${mission.cat}">${badgeLabel}</span>
+        <div class="gym-mission-title">${mission.icon} ${mission.title}</div>
+        <div class="gym-mission-desc">${mission.desc}</div>
+        
+        <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.8px;">
+          ¿Qué pasó en la serie?
+        </div>
+        <div class="gym-verdict-row">
+          <button class="gym-verdict-btn fell" onclick="recordGymOutcome('sabotage')">
+            😈 ¡Cayó en la trampa!
+          </button>
+          <button class="gym-verdict-btn resisted" onclick="recordGymOutcome('resist')">
+            🛡️ ¡Resistió con todo!
+          </button>
+        </div>
+      `;
+
+      playSound('win');
+      if (navigator.vibrate) navigator.vibrate(80);
+    }
+
+    function speakGymMission() {}
+
+    function recordGymOutcome(outcome) {
+      const arena = document.getElementById('gymArena');
+      if (outcome === 'sabotage') {
+        gymSabotageScore++;
+        const el = document.getElementById('gymSabotagesCount');
+        if (el) el.innerText = gymSabotageScore;
+        playSound('win');
+        if (navigator.vibrate) navigator.vibrate([60, 50, 100]);
+
+        if (arena) {
+          arena.innerHTML = `
+            <div style="font-size: 2.2rem; margin-bottom: 6px;">😈🏆</div>
+            <div style="font-size: 1.05rem; font-weight: bold; color: var(--accent-pink); margin-bottom: 6px;">
+              ¡Sabotaje Exitoso!
+            </div>
+            <p style="font-size: 0.85rem; color: #dedede; margin-bottom: 14px;">
+              ¡Se desconcentró por completo! Sumaste 1 punto a la maldad gym.
+            </p>
+            <button class="gym-spin-btn" style="margin: 0; padding: 10px;" onclick="spinGymSabotage()">
+              🎲 Tirar otra misión
+            </button>
+          `;
+        }
+      } else {
+        gymResistScore++;
+        const el = document.getElementById('gymResistCount');
+        if (el) el.innerText = gymResistScore;
+        playSound('lose');
+        if (navigator.vibrate) navigator.vibrate(50);
+
+        if (arena) {
+          arena.innerHTML = `
+            <div style="font-size: 2.2rem; margin-bottom: 6px;">🛡️💪</div>
+            <div style="font-size: 1.05rem; font-weight: bold; color: var(--accent-blue); margin-bottom: 6px;">
+              ¡Fuerza de Acero!
+            </div>
+            <p style="font-size: 0.85rem; color: #dedede; margin-bottom: 14px;">
+              ¡Impenetrable! Aguantó la risa y no soltó el peso.
+            </p>
+            <button class="gym-spin-btn" style="margin: 0; padding: 10px;" onclick="spinGymSabotage()">
+              🎲 Tirar otra misión
+            </button>
+          `;
+        }
+      }
+    }
+    // 5. Extracción de Espinillas
+    let isScanningPimple = false;
+    function triggerPimpleScan() {
+      if (isScanningPimple) return;
+      isScanningPimple = true;
+
+      const btn = document.getElementById('pimpleScanBtn');
+      const statusEl = document.getElementById('scanStatus');
+      if (btn) btn.disabled = true;
+
+      playSound('tick');
+      if (navigator.vibrate) navigator.vibrate([40, 50, 40]);
+
+      if (statusEl) {
+        statusEl.innerHTML = `
+          <div style="color: var(--accent-gold); font-size: 0.88rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span style="font-size: 1.3rem; animation: gymSpinBounce 0.4s infinite alternate; display: inline-block;">🔍</span>
+            Escaneando rostro minuciosamente...
+          </div>
+        `;
+      }
+
+      setTimeout(() => {
+        playSound('win');
+        if (navigator.vibrate) navigator.vibrate([80, 60, 120]);
+
+        if (statusEl) {
+          statusEl.innerHTML = `
+            <div class="pimple-result-box">
+              <div style="font-size: 2.2rem; margin-bottom: 6px;">🎯😈🍳</div>
+              <div style="font-size: 1.05rem; font-weight: 800; color: var(--accent-pink); letter-spacing: 0.5px; margin-bottom: 8px;">
+                ¡PUNTO DETECTADO!
+              </div>
+              <p style="font-size: 0.96rem; color: #ffffff; line-height: 1.5; font-style: italic; margin: 0 0 10px 0; font-weight: 500;">
+                «¡Ajá! Es hora de sacarte las espinillas... Si no te dejas, ¡no te cocino hoy! 🍳🚫»
+              </p>
+              <div style="font-size: 0.72rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+                ⚠️ Advertencia de cocina: Cero resistencia permitida.
+              </div>
+            </div>
+          `;
+        }
+
+        if (btn) btn.disabled = false;
+        isScanningPimple = false;
+      }, 950);
+    }
+
+    function startScan() { triggerPimpleScan(); }
+    function endScan() {}
+  </script>
+</body>
+</html>
